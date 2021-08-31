@@ -1,5 +1,7 @@
 (in-package #:cffi-wait)
 
+(include "sys/wait.h")
+
 (defwrapper ("WEXITSTATUS" wexitstatus) :int (status :int))
 (defwrapper ("WIFCONTINUED" wifcontinued) :int (status :int))
 (defwrapper ("WIFSIGNALED" wifsignaled) :int (status :int))

@@ -2,6 +2,7 @@
 ;;  cffi-wait  -  Common Lisp wrapper for wait.h
 ;;
 ;;  Copyright 2017,2018 Thomas de Grivel <thoxdg@gmail.com>
+;;  Copyright 2021 Matthew Kennedy <burnsidemk@gmail.com>
 ;;
 ;;  Permission to use, copy, modify, and distribute this software for any
 ;;  purpose with or without fee is hereby granted, provided that the above

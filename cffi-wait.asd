@@ -17,13 +17,6 @@
 ;;  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ;;
 
-(in-package :common-lisp-user)
-
-(defpackage :cffi-wait.system
-  (:use :common-lisp :asdf))
-
-(in-package :cffi-wait.system)
-
 (defsystem :cffi-wait
   :name "cffi-wait"
   :author "Matthew Kennedy <burnsidemk@gmail.com>"
