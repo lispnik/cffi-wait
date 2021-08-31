@@ -1,0 +1,35 @@
+;;
+;;  cffi-wait  -  Common Lisp wrapper for wait.h
+;;
+;;  Copyright 2017,2018 Thomas de Grivel <thoxdg@gmail.com>
+;;  Copyright 2021 Matthew Kennedy <burnsidemk@gmail.com>
+;;
+;;  Permission to use, copy, modify, and distribute this software for any
+;;  purpose with or without fee is hereby granted, provided that the above
+;;  copyright notice and this permission notice appear in all copies.
+;;
+;;  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+;;  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+;;  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+;;  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+;;  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+;;  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+;;  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+;;
+
+(in-package :cffi-wait)
+
+(defcfun ("wait" c-wait) pid-t
+  (status :pointer)) ;; int *
+
+(defcfun ("waitid" c-waitid) :int
+  (id-type idtype-t)
+  (id id-t)
+  (info :pointer) ;; siginfo_t *
+  (options :int))
+
+(defcfun ("waitpid" c-waitpid) pid-t
+  (pid pid-t)
+  (status :pointer) ;; int *
+  (options :int))
+
